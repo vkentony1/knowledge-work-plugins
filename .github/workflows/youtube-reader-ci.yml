@@ -37,3 +37,14 @@ jobs:
       - run: node -e "JSON.parse(require('fs').readFileSync('.codex-plugin/plugin.json','utf8')); JSON.parse(require('fs').readFileSync('vercel.json','utf8'));"
       - run: test -s skills/youtube-read/SKILL.md
       - run: npm test
+      - name: Production MCP smoke test
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          for attempt in 1 2 3 4 5; do
+            if node test/production-smoke.mjs; then
+              exit 0
+            fi
+            echo "Production MCP smoke attempt $attempt failed; retrying in 15s"
+            sleep 15
+          done
+          exit 1
