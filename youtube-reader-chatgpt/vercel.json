@@ -9,6 +9,8 @@
     { "source": "/health", "destination": "/api/health" },
     { "source": "/selftest", "destination": "/api/selftest" },
     { "source": "/privacy", "destination": "/api/privacy" },
-    { "source": "/terms", "destination": "/api/terms" }
+    { "source": "/terms", "destination": "/api/terms" },
+    { "source": "/support", "destination": "/api/support" },
+    { "source": "/.well-known/openai-apps-challenge", "destination": "/api/openai-apps-challenge" }
   ]
 }
