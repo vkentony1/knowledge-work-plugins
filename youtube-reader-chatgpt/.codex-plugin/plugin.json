@@ -1,6 +1,6 @@
 {
   "name": "video-transcript-reader",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Read and summarize public YouTube video transcripts with transcript-quality checks and a fast /read workflow.",
   "author": {
     "name": "vkentony1",
@@ -28,6 +28,7 @@
     "category": "Productivity",
     "capabilities": ["Read", "MCP"],
     "websiteURL": "https://youtube-reader-chatgpt.vercel.app/",
+    "supportURL": "https://youtube-reader-chatgpt.vercel.app/support",
     "privacyPolicyURL": "https://youtube-reader-chatgpt.vercel.app/privacy",
     "termsOfServiceURL": "https://youtube-reader-chatgpt.vercel.app/terms",
     "defaultPrompt": [
