@@ -1,0 +1,11 @@
+{
+  "name": "YouTube Reader",
+  "description": "Read public YouTube transcripts inside ChatGPT for summarization, translation, fact-checking, and /read workflows.",
+  "homepage_path": "/",
+  "mcp_path": "/mcp",
+  "privacy_path": "/privacy",
+  "terms_path": "/terms",
+  "authentication": "none",
+  "permissions": "read-only",
+  "storage": "none"
+}
