@@ -6,7 +6,7 @@ import { analyzeTranscript } from './validate.js';
 
 export function buildServer() {
   const server = new McpServer(
-    { name: 'youtube-reader', version: '1.0.3' },
+    { name: 'youtube-reader', version: '1.0.5' },
     { capabilities: { tools: {} } }
   );
 
