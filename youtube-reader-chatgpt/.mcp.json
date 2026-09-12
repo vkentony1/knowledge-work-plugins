@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "youtube-reader": {
+      "type": "http",
+      "url": "https://youtube-reader-chatgpt.vercel.app/mcp"
+    }
+  }
+}
