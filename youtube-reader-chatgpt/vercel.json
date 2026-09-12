@@ -3,5 +3,12 @@
   "framework": null,
   "buildCommand": null,
   "outputDirectory": null,
-  "installCommand": "npm install"
+  "installCommand": "npm install",
+  "rewrites": [
+    { "source": "/mcp", "destination": "/api/mcp" },
+    { "source": "/health", "destination": "/api/health" },
+    { "source": "/selftest", "destination": "/api/selftest" },
+    { "source": "/privacy", "destination": "/api/privacy" },
+    { "source": "/terms", "destination": "/api/terms" }
+  ]
 }

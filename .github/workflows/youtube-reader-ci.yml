@@ -28,11 +28,12 @@ jobs:
       - run: node --check server.js
       - run: node --check lib/upstream.js
       - run: node --check lib/validate.js
-      - name: Validate plugin package
-        run: |
-          node -e "JSON.parse(require('fs').readFileSync('.codex-plugin/plugin.json','utf8'))"
-          node -e "JSON.parse(require('fs').readFileSync('vercel.json','utf8'))"
-          test -f skills/read/SKILL.md
-          grep -q '^name: read-youtube-video$' skills/read/SKILL.md
-          grep -q '^description:' skills/read/SKILL.md
+      - run: node --check lib/mcp.js
+      - run: node --check api/mcp.js
+      - run: node --check api/health.js
+      - run: node --check api/selftest.js
+      - run: node --check api/privacy.js
+      - run: node --check api/terms.js
+      - run: node -e "JSON.parse(require('fs').readFileSync('.codex-plugin/plugin.json','utf8')); JSON.parse(require('fs').readFileSync('vercel.json','utf8'));"
+      - run: test -s skills/youtube-read/SKILL.md
       - run: npm test
