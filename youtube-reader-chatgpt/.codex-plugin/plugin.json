@@ -1,0 +1,41 @@
+{
+  "name": "video-transcript-reader",
+  "version": "1.0.2",
+  "description": "Read and summarize public YouTube video transcripts with transcript-quality checks and a fast /read workflow.",
+  "author": {
+    "name": "vkentony1",
+    "url": "https://github.com/vkentony1"
+  },
+  "homepage": "https://github.com/vkentony1/knowledge-work-plugins/tree/main/youtube-reader-chatgpt",
+  "repository": "https://github.com/vkentony1/knowledge-work-plugins/tree/main/youtube-reader-chatgpt",
+  "license": "MIT",
+  "keywords": [
+    "youtube",
+    "transcript",
+    "summary",
+    "read",
+    "fact-check",
+    "video",
+    "mcp"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Video Transcript Reader",
+    "shortDescription": "Read YouTube videos without watching the full video",
+    "longDescription": "Retrieve a public YouTube transcript, check transcript completeness and duplication, then turn the video into a concise source-grounded summary with key ideas, evidence, timestamps, verification flags, and practical takeaways.",
+    "developerName": "vkentony1",
+    "category": "Productivity",
+    "capabilities": ["Read", "MCP"],
+    "websiteURL": "https://github.com/vkentony1/knowledge-work-plugins/tree/main/youtube-reader-chatgpt",
+    "privacyPolicyURL": "https://github.com/vkentony1/knowledge-work-plugins/blob/main/youtube-reader-chatgpt/SECURITY.md",
+    "termsOfServiceURL": "https://github.com/vkentony1/knowledge-work-plugins/blob/main/youtube-reader-chatgpt/LICENSE",
+    "defaultPrompt": [
+      "/read this YouTube video",
+      "Summarize this YouTube video so I do not have to watch the full video",
+      "Extract the key ideas and important claims from this YouTube video",
+      "Fact-check the material claims in this YouTube video"
+    ],
+    "screenshots": [],
+    "brandColor": "#111111"
+  }
+}
