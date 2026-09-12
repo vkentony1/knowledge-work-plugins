@@ -1,12 +1,12 @@
 {
   "name": "video-transcript-reader",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Read and summarize public YouTube video transcripts with transcript-quality checks and a fast /read workflow.",
   "author": {
     "name": "vkentony1",
     "url": "https://github.com/vkentony1"
   },
-  "homepage": "https://github.com/vkentony1/knowledge-work-plugins/tree/main/youtube-reader-chatgpt",
+  "homepage": "https://youtube-reader-chatgpt.vercel.app/",
   "repository": "https://github.com/vkentony1/knowledge-work-plugins/tree/main/youtube-reader-chatgpt",
   "license": "MIT",
   "keywords": [
@@ -19,6 +19,7 @@
     "mcp"
   ],
   "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "Video Transcript Reader",
     "shortDescription": "Read YouTube videos without watching the full video",
@@ -26,9 +27,9 @@
     "developerName": "vkentony1",
     "category": "Productivity",
     "capabilities": ["Read", "MCP"],
-    "websiteURL": "https://github.com/vkentony1/knowledge-work-plugins/tree/main/youtube-reader-chatgpt",
-    "privacyPolicyURL": "https://github.com/vkentony1/knowledge-work-plugins/blob/main/youtube-reader-chatgpt/PRIVACY.md",
-    "termsOfServiceURL": "https://github.com/vkentony1/knowledge-work-plugins/blob/main/youtube-reader-chatgpt/TERMS.md",
+    "websiteURL": "https://youtube-reader-chatgpt.vercel.app/",
+    "privacyPolicyURL": "https://youtube-reader-chatgpt.vercel.app/privacy",
+    "termsOfServiceURL": "https://youtube-reader-chatgpt.vercel.app/terms",
     "defaultPrompt": [
       "/read this YouTube video",
       "Summarize this YouTube video so I do not have to watch the full video",
