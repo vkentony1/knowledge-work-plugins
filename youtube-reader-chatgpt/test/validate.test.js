@@ -2,13 +2,37 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { analyzeTranscript } from '../lib/validate.js';
 
-test('accepts non-empty transcript and captures timestamps', () => {
+test('accepts non-empty transcript and captures plain timestamps', () => {
   const text = Array.from({ length: 30 }, (_, i) => `${Math.floor(i / 2)}:${String((i * 2) % 60).padStart(2, '0')} unique transcript line ${i}`).join('\n');
   const qa = analyzeTranscript(text);
   assert.equal(qa.has_content, true);
   assert.equal(qa.suspicious_duplicates, false);
   assert.equal(qa.first_timestamp, '0:00');
   assert.equal(qa.last_timestamp_seconds >= qa.first_timestamp_seconds, true);
+});
+
+test('parses provider direct TXT bracket timestamps and passes QA', () => {
+  const text = Array.from({ length: 40 }, (_, i) => {
+    const seconds = i * 70;
+    const m = Math.floor(seconds / 60);
+    const s = seconds % 60;
+    return `[${m}:${String(s).padStart(2, '0')}] paragraph ${i} with enough unique transcript content to represent a real caption block.`;
+  }).join('\n\n');
+  const qa = analyzeTranscript(text);
+  assert.equal(qa.first_timestamp, '0:00');
+  assert.equal(qa.starts_near_zero, true);
+  assert.equal(qa.timestamp_count, 40);
+  assert.equal(qa.timestamp_monotonicity_ratio, 1);
+  assert.equal(qa.qa_status, 'PASS');
+});
+
+test('parses decimal second markers from MCP-style payloads', () => {
+  const text = Array.from({ length: 25 }, (_, i) => `[${(i * 8.5).toFixed(2)}s] unique caption text ${i} with enough material for validation`).join('\n');
+  const qa = analyzeTranscript(text);
+  assert.equal(qa.first_timestamp, '0:00');
+  assert.equal(qa.timestamp_count, 25);
+  assert.equal(qa.timestamp_monotonicity_ratio, 1);
+  assert.equal(qa.qa_status, 'PASS');
 });
 
 test('flags exact looping transcript', () => {
