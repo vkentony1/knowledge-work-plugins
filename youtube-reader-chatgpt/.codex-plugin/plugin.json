@@ -27,8 +27,8 @@
     "category": "Productivity",
     "capabilities": ["Read", "MCP"],
     "websiteURL": "https://github.com/vkentony1/knowledge-work-plugins/tree/main/youtube-reader-chatgpt",
-    "privacyPolicyURL": "https://github.com/vkentony1/knowledge-work-plugins/blob/main/youtube-reader-chatgpt/SECURITY.md",
-    "termsOfServiceURL": "https://github.com/vkentony1/knowledge-work-plugins/blob/main/youtube-reader-chatgpt/LICENSE",
+    "privacyPolicyURL": "https://github.com/vkentony1/knowledge-work-plugins/blob/main/youtube-reader-chatgpt/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/vkentony1/knowledge-work-plugins/blob/main/youtube-reader-chatgpt/TERMS.md",
     "defaultPrompt": [
       "/read this YouTube video",
       "Summarize this YouTube video so I do not have to watch the full video",
